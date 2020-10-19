@@ -26,7 +26,7 @@ In this assignment, we will implement two methods for algorithm selection:
 * **Baseline:** determines which of the base-models performs best on average on all base-datasets in the train set. This base-model is then applied on all  base-datasets in the test set.
 * **Regression:** this models the performance of individual algorithms in the portfolio.
 	A regression model *f<sub>A</sub>* can be trained for each *A \in P*
-	on *D<sub>meta</sub>* with *x<sub>j</sub> = \feat(\inst)* and *y<sub>j</sub> = m(A, x)* for each
+	on *D<sub>meta</sub>* with *x<sub>j</sub> = F(x)* and *y<sub>j</sub> = m(A, x)* for each
 	previously observed dataset *i* that *A* was ran on.
 	The machine learning algorithm can then predict how well algorithm *A*
 	performs on a given dataset *x*.
