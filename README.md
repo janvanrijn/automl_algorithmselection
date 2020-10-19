@@ -16,7 +16,7 @@ A basic approach involves
 Generally, these meta-learning models are induced based on a meta-dataset
 *D<sub>meta</sub> = {(x<sub>i</sub>, y<sub>i</sub>) | i = 1, ..., n}* with *n* datapoints to map an
 input *x* to output *f(x)*, which closely represents *y*.
-In this setting, *x_i* is typically the vector of numerical features *F(x)*
+In this setting, *x<sub>i</sub>* is typically the vector of numerical features *F(x)*
 from some base-dataset *x* that has been observed before.
 There are various variations for representing the *y* values and ways for
 algorithm selection system *s* to leverage the predictions *f(x)* (not to be confused with *F(x)*).
