@@ -10,23 +10,23 @@ metric *m* (in this case: accuracy).
 
 The figure above shows a basic algorithm selection framework that is used in practice.
 A basic approach involves
-* representing a given dataset *x* with a vector of numerical features *F(x)* (the so-called meta-features, e.g., number of observations, number of features),
-* inducing a meta-learning model *s* that selects a (base-)model for the given dataset *D<sub>base</sub>* based on its features *F(x)*.
+* representing a given dataset *D<sub>base</sub>* with a vector of numerical features *F(D<sub>base</sub>)* (the so-called meta-features, e.g., number of observations, number of features),
+* inducing a meta-learning model *s* that selects a (base-)model for the given dataset *D<sub>base</sub>* based on its features *F(D<sub>base</sub>)*.
 
 Generally, these meta-learning models are induced based on a meta-dataset
 *D<sub>meta</sub> = {(x<sub>i</sub>, y<sub>i</sub>) | i = 1, ..., n}* with *n* datapoints to map an
 input *x* to output *f(x)*, which closely represents *y*.
-In this setting, *x<sub>i</sub>* is typically the vector of numerical features *F(x)*
-from some base-dataset *x* that has been observed before.
+In this setting, *x<sub>i</sub>* is typically the vector of numerical features *F(D<sub>base</sub>)*
+from some base-dataset *D<sub>base</sub>* that has been observed before.
 There are various variations for representing the *y* values and ways for
-algorithm selection system *s* to leverage the predictions *f(x)* (not to be confused with *F(x)*).
+algorithm selection system *s* to leverage the predictions *f(x)*.
 
 In this assignment, we will implement two methods for algorithm selection:
 
 * **Baseline:** determines which of the base-models performs best on average on all base-datasets in the train set. This base-model is then applied on all  base-datasets in the test set.
 * **Regression:** this models the performance of individual algorithms in the portfolio.
 	A regression model *f<sub>A</sub>* can be trained for each *A \in P*
-	on *D<sub>meta</sub>* with *x<sub>j</sub> = F(x)* and *y<sub>j</sub> = m(A, x)* for each
+	on *D<sub>meta</sub>* with *x<sub>j</sub> = F(D<sub>base</sub>)* and *y<sub>j</sub> = m(A, D<sub>base</sub>)* for each
 	previously observed dataset *i* that *A* was ran on.
 	The machine learning algorithm can then predict how well algorithm *A*
 	performs on a given dataset *x*.
