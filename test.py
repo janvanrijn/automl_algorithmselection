@@ -1,7 +1,7 @@
 import pandas as pd
 import unittest
 
-from solution import MetaLearningBestOnAverage, MetaLearningRegressionBased
+from assignment import MetaLearningBestOnAverage, MetaLearningRegressionBased
 
 
 class TestMetaModels(unittest.TestCase):
